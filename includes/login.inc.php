@@ -1,0 +1,62 @@
+<?php
+if(isset($_POST["submit"])){
+    //invisible secret
+    $secret_key = "6LfXTOElAAAAAIViCre-Yol6e257EmsC8gyULsM3";
+    
+    // checkbox captcha verification
+     function post_captcha($user_response) {
+        $fields_string = '';
+        $fields = array(
+            'secret' => '6Lfz0RMkAAAAAOf3dju151CnmPHBfe-fWC3vN-3Z',
+            'response' => $user_response
+        );
+        foreach($fields as $key=>$value)
+        $fields_string .= $key . '=' . $value . '&';
+        $fields_string = rtrim($fields_string, '&');
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, 'https://www.google.com/recaptcha/api/siteverify');
+        curl_setopt($ch, CURLOPT_POST, count($fields));
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $fields_string);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, True);
+
+        $result = curl_exec($ch);
+        curl_close($ch);
+
+        return json_decode($result, true);
+    }
+    
+    // Call the function post_captcha
+    $res = post_captcha($_POST['g-recaptcha-response']);
+
+    if (!$res['success']) {
+        // What happens when the CAPTCHA wasn't checked
+        header('location: ../login.php?error=notchecked');
+        exit;
+    }
+    // } else {
+    //     // If CAPTCHA is successfully completed...
+
+    //     // Paste mail function or whatever else you want to happen here!
+    //     echo '<br><p>CAPTCHA was completed successfully!</p><br>';
+    // }
+    
+    $email = $_POST["email"];
+    $pwd = $_POST["pwd"];
+    $location = $_POST["location"];
+
+    require_once 'dbh.inc.php';
+    require_once 'functions.inc.php';
+
+    if(emptyInputLogin($email, $pwd) !== FALSE){
+        header("location: ../login.php?error=emptyinput");
+        exit();
+    }
+    loginUser($conn, $email, $pwd, $location);
+
+}
+else{
+    header("location: /Login");
+    exit();
+}
+

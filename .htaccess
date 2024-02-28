@@ -1,0 +1,59 @@
+
+# HTID:20974113: DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES BELOW
+php_value display_errors 1
+# DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES ABOVE HTID:20974113:
+
+
+RewriteEngine on
+#Customer
+RewriteRule ^Home Homepage.php [NC, L]
+
+RewriteRule ^Account profile.php [NC, L]
+
+RewriteRule ^Orders orders.php [NC, L]
+
+RewriteRule ^Orders/([0-9]+) orders.php?u=$1 [NC, L]
+
+RewriteRule ^Profile users.php [NC, L]
+
+RewriteRule ^Man shop_man.php [NC, L]
+
+RewriteRule ^Woman shop_woman.php [NC, L]
+
+RewriteRule ^New Whats_new.php [NC, L]
+
+RewriteRule ^Shop Shopping_page.php [NC, L]
+
+RewriteRule ^Contact Contact_us.php [NC, L]
+
+RewriteRule ^Login login.php [NC, L]
+
+RewriteRule ^Register signup.php [NC, L]
+
+RewriteRule ^Delivery delivery.php [NC, L]
+
+RewriteRule ^Cart cart.php [NC, L]
+
+RewriteRule ^Forgot_Password forgotPassword.php [NC, L]
+
+RewriteRule ^Cart/([0-9]+) cart.php?action=remove&id=$1 [NC, L]
+
+RewriteRule ^Item/([0-9a-zA-Z-_]+) item.php?id=$1 [NC, L]
+RewriteRule ^Checkout checkout.php [NC, L]
+RewriteRule ^Choice admin.choice.php [NC, L]
+
+#ADMIN
+RewriteRule ^Admin/Orders/([0-9]+) admin/orders.php?u=$1 [NC, L]
+RewriteRule ^Admin/Login admin/login.php [NC, L]
+RewriteRule ^Admin/Orders admin/orders.php [NC, L]
+RewriteRule ^Admin/Products admin/products.php [NC, L]
+RewriteRule ^Admin/Users admin/users.php [NC, L]
+RewriteRule ^Admin/Links admin/links.admin.php [NC, L]
+RewriteRule ^Admin/UpdateLinks admin/link.update.php [NC, L]
+RewriteRule ^Admin/Updates admin/updates.admin.php [NC, L]
+RewriteRule ^Admin/Dashboard admin/index.php [NC, L]
+
+RewriteRule ^Admin/ImagesUpdate admin/images.admin.php [NC, L]
+RewriteRule ^Admin/Brand admin/brand.admin.php [NC, L]
+RewriteRule ^Admin/Meta-Data admin/meta.admin.php [NC, L]
+RewriteRule ^Admin/UserUpdate admin/user.admin.php [NC, L]
