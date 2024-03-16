@@ -57,3 +57,8 @@ RewriteRule ^Admin/ImagesUpdate admin/images.admin.php [NC, L]
 RewriteRule ^Admin/Brand admin/brand.admin.php [NC, L]
 RewriteRule ^Admin/Meta-Data admin/meta.admin.php [NC, L]
 RewriteRule ^Admin/UserUpdate admin/user.admin.php [NC, L]
+
+# Cache All Image Files For 1 week (604800)
+<FilesMatch "\.(jpeg|jpg|png|gif|swf)$">
+    Header set Cache-Control "max-age=604800, public"
+</FilesMatch>
