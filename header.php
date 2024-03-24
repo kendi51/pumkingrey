@@ -57,10 +57,10 @@
 	$database = new CreateDb("u843931047_productdb", "producttb"); //online db
 	$link_db = new CreateDb("u843931047_productdb", "linkstb"); //online db
 	
-	$serverName = "localhost";
-    $dBUserName = "u843931047_pumkinproducts";
-    $dBPassword = "5P~PCQfN:g";
-    $dBName = "u843931047_productdb";
+	$serverName = "srv1350.hstgr.io";
+	$dBUserName = "u849136244_pumkingrey";
+	$dBPassword = "G2O9+euM^c;";
+	$dBName = "u849136244_pumkin_grey";
 
 
     $product_conn = mysqli_connect($serverName, $dBUserName, $dBPassword, $dBName);

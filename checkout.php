@@ -129,7 +129,7 @@ if(!orderExists($conn, $orderContent, $_SESSION['userid'])){
   }
   else{
 
-      $sql = "INSERT INTO pumkinorderdetails (orderRef, userId, userName, orderContent, orderTotalPrice, deliveryAddress, dateOfTrans) VALUES (?, ?, ?, ?, ?, ?, ?);";
+      $sql = "INSERT INTO pumkinOrderDetails (orderRef, userId, userName, orderContent, orderTotalPrice, deliveryAddress, dateOfTrans) VALUES (?, ?, ?, ?, ?, ?, ?);";
 
       $stmt = mysqli_stmt_init($conn);
 

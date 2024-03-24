@@ -263,13 +263,13 @@ function orderExists($conn, $cart, $userId){
 }
 
 function checkOrders($conn, $currntTime){
-    $indb = new CreateDb("u843931047_productdb", "inventorytb"); // Local db
+    $indb = new CreateDb("u849136244_pumkin_grey", "inventorytb"); // Local db
     
     // DB CONNECTION
-    $serverName = "localhost";
-    $dBUserName = "u843931047_pumkinproducts";
-    $dBPassword = "5P~PCQfN:g";
-    $dBName = "u843931047_productdb";
+    $serverName = "srv1350.hstgr.io";
+    $dBUserName = "u849136244_pumkingrey";
+    $dBPassword = "G2O9+euM^c;";
+    $dBName = "u849136244_pumkin_grey";
     
     $in_db = mysqli_connect($serverName,$dBUserName,$dBPassword,$dBName);
     
@@ -278,7 +278,7 @@ function checkOrders($conn, $currntTime){
     }
     // END OF DB CONNECTION
     
-    $sql = "SELECT * FROM pumkinorderdetails;";
+    $sql = "SELECT * FROM pumkinOrderDetails;";
 
     $stmt = mysqli_stmt_init($conn);
 

@@ -9,36 +9,48 @@ class CreateDb{
     public $tablename;
     public $con;
 
+    
 
     public function __construct(
-        $dbname = "u843931047_productdb",
-        $tablename = "Producttb",
-        $servername = "localhost",
-        $username = "u843931047_pumkinproducts",
-        $password = "5P~PCQfN:g") {
-            $this->dbname = $dbname;
+        $tablename = "producttb",
+        // $servername = "srv1350.hstgr.io",
+        // $username = "u849136244_pumkingrey",
+        // $password = "G2O9+euM^c;",
+        //$dbname = "u849136244_pumkin_grey"
+        ) {
+            //$this->dbname = $dbname;
             $this->tablename = $tablename;
-            $this->servername = $servername;
-            $this->username = $username;
-            $this->password = $password;
+            // $this->servername = $servername;
+            // $this->username = $username;
+            // $this->password = $password;
             
             
             //create connection;
+            $serverName = "srv1350.hstgr.io";
+            $dBUserName = "u849136244_pumkingrey";
+            $dBPassword = "G2O9+euM^c;";
+            $dBName = "u849136244_pumkin_grey";
 
-            $this->con = mysqli_connect($servername,$username,$password);
+            $conn = mysqli_connect($serverName,$dBUserName,$dBPassword,$dBName);
+
+            if(!$conn){
+                die("Connection Failed: " . mysqli_connect_error());
+            }
+            
+            $this->con = $conn;//mysqli_connect($servername,$username,$password, $dbname);
 
             //check connection
             if(!$this->con){
                 die("Connection failed: ".mysqli_connect_error());
             }
+            $tablename = "producttb";
+            //create query
+            // $sql = "CREATE DATABASE IF NOT EXISTS $dbname";
 
-            //create quaery
-            $sql = "CREATE DATABASE IF NOT EXISTS $dbname";
+            // //EXECUTE QUERY
+            // if(mysqli_query($this->con,$sql)){
 
-            //EXECUTE QUERY
-            if(mysqli_query($this->con,$sql)){
-
-                $this->con = mysqli_connect($servername,$username,$password, $dbname);
+            //     $this->con = $conn;//mysqli_connect($servername,$username,$password, $dbname);
 
                 //sql create table
                 $sql="CREATE TABLE IF NOT EXISTS $tablename(
@@ -57,7 +69,7 @@ class CreateDb{
                     product_size_type INT(1),
                     product_stock INT(3)
                 );";
-            }
+            //}
 
             if(!mysqli_query($this->con,$sql)){
                 echo "Error creating table: ".mysqli_error($this->con);
