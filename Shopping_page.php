@@ -58,12 +58,12 @@
 <?php
     carousel($text1, $text2);
 
-    $result = $link_db->getData();
-    while($row = mysqli_fetch_assoc($result)){
-        if(strcasecmp($row['link_title'], "zulu mafia") == 0){
-            leftImg($row['link_img'], $row['link_title'], $row['link_para'], $row['link_filter'], $row['link_search']);
-        }
-    }
+    // $result = $link_db->getData();
+    // while($row = mysqli_fetch_assoc($result)){
+    //     if(strcasecmp($row['link_title'], "zulu mafia") == 0){
+    //         leftImg($row['link_img'], $row['link_title'], $row['link_para'], $row['link_filter'], $row['link_search']);
+    //     }
+    // }
     
 ?>
 <!--END OF Text Banner -->
@@ -203,12 +203,12 @@
 
 <!-- LEFT IMG WITH RIGHT TEXT -->
 <?php
-    $result = $link_db->getData();
-    while($row = mysqli_fetch_assoc($result)){
-        if(strcasecmp($row['link_search'], "female") == 0){
-            leftImg($row['link_img'], $row['link_title'], $row['link_para'], $row['link_filter'], $row['link_search']);
-        }
-    }
+    // $result = $link_db->getData();
+    // while($row = mysqli_fetch_assoc($result)){
+    //     if(strcasecmp($row['link_search'], "female") == 0){
+    //         leftImg($row['link_img'], $row['link_title'], $row['link_para'], $row['link_filter'], $row['link_search']);
+    //     }
+    // }
 ?>
 <!-- END OF LEFT IMG RIGHT TEXT -->
 
@@ -224,12 +224,12 @@
 
 <!-- RIGHT IMG WITH RIGHT TEXT -->
 <?php
-    $result = $link_db->getData();
-    while($row = mysqli_fetch_assoc($result)){
-        if(strcasecmp($row['link_search'], "zando") == 0){
-            rightImg($row['link_img'], $row['link_title'], $row['link_para'], $row['link_filter'], $row['link_search']);
-        }
-    }
+    // $result = $link_db->getData();
+    // while($row = mysqli_fetch_assoc($result)){
+    //     if(strcasecmp($row['link_search'], "zando") == 0){
+    //         rightImg($row['link_img'], $row['link_title'], $row['link_para'], $row['link_filter'], $row['link_search']);
+    //     }
+    // }
 ?>
 <!-- END OF RIGHT IMG RIGHT TEXT -->
 

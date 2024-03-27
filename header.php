@@ -55,7 +55,7 @@
 	//create instance of CreateDb class
 // 	$database = new CreateDb("Productdb", "Producttb"); // Local db
 	$database = new CreateDb("u843931047_productdb", "producttb"); //online db
-	$link_db = new CreateDb("u843931047_productdb", "linkstb"); //online db
+	$link_db = new CreateDb("u849136244_pumkin_grey", "linkstb"); //online db
 	
 	$serverName = "srv1350.hstgr.io";
 	$dBUserName = "u849136244_pumkingrey";
